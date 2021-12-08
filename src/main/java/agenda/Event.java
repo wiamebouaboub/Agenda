@@ -7,17 +7,17 @@ public class Event {
     /**
      * The myTitle of this event
      */
-    protected String myTitle;
+    private String myTitle;
     
     /**
      * The starting time of the event
      */
-    protected LocalDateTime myStart;
+    private LocalDateTime myStart;
 
     /**
      * The durarion of the event 
      */
-    protected Duration myDuration;
+    private Duration myDuration;
 
 
     /**
