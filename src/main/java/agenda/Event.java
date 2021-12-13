@@ -42,7 +42,7 @@ public class Event {
         boolean res = false;
         LocalDate eStart = myStart.toLocalDate();
         LocalDate eEnd = myStart.plus(myDuration).toLocalDate();
-        if (!(aDay.isBefore(eStart)) && !(aDay.isAfter(eEnd))) {
+        if (!(aDay.isBefore(eStart)) && !(aDay.isAfter(eEnd)) && aDay!=null) {
             res = true;
         }
         return res;
