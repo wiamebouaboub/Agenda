@@ -12,7 +12,7 @@ public class Event {
     /**
      * The starting time of the event
      */
-    private LocalDateTime myStart;
+    protected LocalDateTime myStart;
 
     /**
      * The durarion of the event
@@ -42,8 +42,10 @@ public class Event {
         boolean res = false;
         LocalDate eStart = myStart.toLocalDate();
         LocalDate eEnd = myStart.plus(myDuration).toLocalDate();
-        if (!(aDay.isBefore(eStart)) && !(aDay.isAfter(eEnd))  && aDay!=null) {
+        if (aDay.isAfter(eStart) || aDay.isEqual(eStart)) {
+            if (aDay.isBefore(eEnd) || aDay.isEqual(eEnd)){
             res = true;
+            }
         }
         return res;
     }
@@ -68,5 +70,12 @@ public class Event {
     public Duration getDuration() {
         return myDuration;
     }
+
+    @Override
+    public String toString() {
+        return "Event{" + "myTitle=" + myTitle + ", myStart=" + myStart + ", myDuration=" + myDuration + '}';
+    }
+    
+    
 
 }
